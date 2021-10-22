@@ -1,0 +1,39 @@
+----==== SPECIFICATION ====----
+C++ Project manager Shell program
+
+Specs:
+	- the program could be started from everywhere
+	- create project with specified bulid configs (make, cmake/sublime)
+	- ceate new C++ class, with .h and .cpp file (.h contains header guard)
+	- delete existing C++ class
+	- creade new header file and source file
+	- delete header file and source file 
+
+Project structure: project name
+project_dir/
+	- src/  all source files (.cpp and .h)
+	- bin/  all the binary and dependency files (.o and .d)
+	- Makefile
+	- project_name executable, the result of the building process
+
+Makefile
+	- must be flexible: no need to specify source files
+	- support debug: make debug
+	- support run: make all
+
+Options
+	-h -? display help
+	-v verbose mode: verbose flag:=true
+	-c select class <class_name>: class_name:=optarg
+	-i select include file <header_name> : current_include_name:=optarg
+	-s select source file <source_name>: current_source:=optarg
+	-p select project <project_name>: project_name:=optarg
+
+Arguments
+	<project_name> <class_name> <header_name> <source_name>
+	create/c delete/d run/r debug clean build/b
+
+Usage
+	pm create/c -p project_name
+	pm delete/d -o project_name
+	pm create/c -c class_name 
